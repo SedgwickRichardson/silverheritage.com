@@ -1,0 +1,4 @@
+For child theme rewrites:
+
+RewriteRule ^assets/(.*) /wp-content/themes/active_child_theme/assets/$1 [QSA,L]
+RewriteRule ^plugins/(.*) /wp-content/plugins/$1 [QSA,L]

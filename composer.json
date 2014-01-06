@@ -1,0 +1,30 @@
+{
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"http://wpackagist.org"
+        }
+    ],
+    "require": {
+      "aws/aws-sdk-php":"*",
+      "wpackagist/advanced-custom-fields":"*",
+      "wpackagist/akismet":"*",
+			"wpackagist/mobble":"*",
+      "wpackagist/contact-form-7":"*",
+      "wpackagist/contact-form-7-to-database-extension":"*",
+      "wpackagist/search-and-replace":"*",
+      "wpackagist/the-taxonomy-sort":"*",
+      "wpackagist/wordpress-importer":"*",
+      "wpackagist/wordpress-seo":"*",
+      "wpackagist/w3-total-cache":"*",
+      "wpackagist/duplicate-post":"*",
+      "wpackagist/google-sitemap-generator":"*",
+      "wpackagist/pagemash":"*",
+      "wpackagist/secure-wordpress":"*"  
+    },
+    "autoload": {
+        "psr-0": {
+            "Acme": "src/"
+        }
+    }
+}
