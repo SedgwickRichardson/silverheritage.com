@@ -3,7 +3,9 @@
  */
 @import "font-awesome/font-awesome.less";
 @import "bootstrap/bootstrap.less";
+@import "animate.less";
 @import "fonts.less";
+@import "media-queries.less";
 
 /* Global Styles */
 html,
@@ -21,6 +23,7 @@ strong {
   background: white;
   padding-left: 0px;
   padding-right: 0px;
+  overflow: hidden;
 }
 footer .container {
    background: @gray-lighter;
@@ -33,7 +36,7 @@ footer .container {
   text-align: center;
   
   .vert-text {
-    margin-top: 200px;
+    margin: 200px 0px 130px 0px;
     text-align: center;
     h1 {
       padding: 0;
@@ -55,10 +58,14 @@ footer .container {
 }
 
 nav {
+  background: white;
+  .toptoplink {
+    display:none;
+  }
   ul.navbar-nav {
     float: none;
     display: inline-block;
-    margin: 130px 0px 30px 0px;
+    margin: 0px 0px 30px 0px;
     padding: 0px 20px;
     border-bottom: 1px solid @gray;
     li {
@@ -69,7 +76,51 @@ nav {
         color: @gray;
 
       }
+      &.active {
+        a {
+          background: #3774b9;
+          color: white;
+        }
+      }
     }
+  }
+}
+.is-sticky {
+  display: block;
+  width: 100%;
+  z-index: 8000;
+  position: relative;
+  background: white;  
+  nav {
+    //border-bottom: 1px solid @gray-light;
+    box-shadow: 0px 0px 10px @gray;
+    .toptoplink {
+      display: block;
+      float: left;
+      position: relative;
+      z-index: 2000;
+      .animated;
+      //.bounceIn;
+      .fadeInLeft;
+      
+      img {
+        width: 200px;
+        height: auto;
+      }
+
+    }
+  
+    .navbar-nav {
+      display: block;
+      padding: 0px;
+      margin: 0px;
+      border: none;
+      .animated;
+      .fadeInRight;
+
+
+    }
+  
   }
 }
 
@@ -85,15 +136,16 @@ nav {
   
   &#roulette {
     height: 493px;
-    background: url(../img/sample-image1-big.jpg) no-repeat center top fixed; 
+
+    background: url(../img/sample-image1-big.jpg) no-repeat center center; 
   }
   &#casino {
     height: 493px;
-    background: url(../img/sample-image2-big.jpg) no-repeat center top fixed; 
+    background: url(../img/sample-image2-big.jpg) no-repeat center center; 
   }
   &#cheers {
     height: 750px;
-    background: url(../img/sample-image3-big.jpg) no-repeat center 0px fixed; 
+    background: url(../img/sample-image3-big.jpg) no-repeat center center; 
   }
 }
 
@@ -146,15 +198,64 @@ p.lead {
 }
 
 #team {
-  strong,i {
+  strong,em {
     display: block;
   }
-  i {
+  em {
     font-style: normal;
     font-family: @robotoslab_regular;
     margin-bottom: 5px;
   }
-  
+  .bx-controls .bx-pager-item {
+    display: inline-block;
+    padding: 0;
+    text-indent: -9999px;
+    a {
+      display: block;
+      width: 12px;
+      height: 12px;
+      margin-right: 5px;
+      background: white;
+      border: 1px solid #999;
+      border-radius: 10px;  
+      &.active {
+        background: #999;
+      }
+    }
+
+  }
+  .fa {
+    position: absolute;
+    right: -50px;
+    top: 160px;
+    color: #999;
+  }
+  .bx-wrapper {
+    position: relative;
+  }
+}
+
+#contact {
+  em {
+    font-style: normal;
+    display: block;
+  }
+  form {
+    label {
+      display: block;
+      font-family: @roboto_medium;
+    }
+    input[type=text],
+    input[type=email],
+    textarea {
+      width: 100%;
+      border: 1px solid @gray-light;
+      box-shadow: inset 0px 0px 2px lighten(@gray-light,10%);
+      border-radius: 3px;
+      padding: 5px;
+    }
+ 
+  }
 }
 /* Portfolio */
 
@@ -210,21 +311,4 @@ i.scroll {
 
 i.scroll:hover {
   color: #0a5175;
-}
-/* Responsive */
-
-@media (max-width: 768px) {
-	
-  .header {
-	background: url(../img/bg.jpg) no-repeat center center scroll; 
-  }
-
-  .callout {
-	background: url(../img/callout.jpg) no-repeat center center scroll; 
-  }
-
-  .map {
-	height: 75%;
-  }
-
 }

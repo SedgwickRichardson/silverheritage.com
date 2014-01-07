@@ -5,7 +5,67 @@ var ExampleSite = {
   // All pages
   common: {
     init: function() {
+      $(window).scroll(function() {
+        if($(this).scrollTop() < 500) {
+  				$("#main-nav .active").removeClass("active");
+        } else if ($(this).scrollTop() > 600 && $(this).scrollTop() < 700) {
+					$("#main-nav li:first-child").addClass("active");
+				}
+      });
       $(".tooltips").tooltip();
+      $('.team-slider').bxSlider({
+			
+				//controls: false,
+			//	pager: false,
+				mode: 'horizontal',
+				auto: true,
+				speed: 800,
+				pause: 6000,
+				preloadImages: 'all',
+				nextText: '<i class="fa fa-chevron-right"></i>',
+				prevText: ''
+			});
+				
+      $.stellar({
+        
+        horizontalScrolling: true,
+        verticalScrolling: true,
+        
+        // Set the global alignment offsets
+        horizontalOffset: 0,
+        verticalOffset: 0,
+        
+        // Refreshes parallax content on window load and resize
+        responsive: false,
+        
+        // Select which property is used to calculate scroll.
+        // Choose 'scroll', 'position', 'margin' or 'transform',
+        // or write your own 'scrollProperty' plugin.
+        scrollProperty: 'scroll',
+        
+        // Select which property is used to position elements.
+        // Choose between 'position' or 'transform',
+        // or write your own 'positionProperty' plugin.
+        positionProperty: 'position',
+        
+        // Enable or disable the two types of parallax
+        parallaxBackgrounds: true,
+        parallaxElements: true,
+        
+        // Hide parallax elements that move outside the viewport
+        hideDistantElements: true
+        
+      });
+      
+      $("#main-nav").sticky({topSpacing:0});
+      
+      $('#main-nav a').smoothScroll({
+			
+				offset: 0
+				
+			}); 
+
+/*
       $(window).scroll(function(){
 				if($(this).scrollTop()>=100) {
 					$('.subnav').addClass('fixed');
@@ -19,14 +79,17 @@ var ExampleSite = {
 				}
 				console.log($(this).scrollTop());
 				if ($(this).scrollTop() > 0) {
-  				$('#roulette').css({ 'background-position' : "center "+-($(this).scrollTop()/8)+"px" }); 
-  				$('#casino').css({ 'background-position' : "center "+-($(this).scrollTop()/8)+"px" }); 
+  				$('#roulette').css({ 'background-position' : "center "+-($(this).scrollTop()/12)+"px" }); 
+        }
+        if ($(this).scrollTop() > 800) {
+          $('#casino').css({ 'background-position' : "center "+-($(this).scrollTop()/12)+"px" }); 
         }
 				if ($(this).scrollTop() > 1500) {
    				$('#cheers').css({ 'background-position' : "center "+-($(this).scrollTop()/15)+"px" }); 
    			}
         //console.log($(this).scrollTop());
       });
+*/
       
       
       $('a[href*=#]:not([href=#])').click(function() {

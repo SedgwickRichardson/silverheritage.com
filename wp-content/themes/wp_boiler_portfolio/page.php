@@ -8,26 +8,9 @@
  */
 
 get_header();
-?>
-<div class="container">
-
-  <!-- Full Page Image Header Area -->
-    <div id="top" class="header">
-      <div class="vert-text">
-        <h1>Silver Heritage</h1>
-        <h2>Asia's Regional Gaming Operator</h2>
-      </div>
-      <nav class="collapse navbar-collapse" role="navigation">
-		  <?php
-        if (has_nav_menu('primary_navigation')) :
-          wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav'));
-        endif;
-      ?>   
-      </nav>
-    </div>
-   
+?> 
     <!-- Callout -->
-    <div class="callout" id="roulette">
+    <div class="callout" id="roulette" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="0">
       
     </div>
     <!-- /Callout -->
@@ -48,7 +31,7 @@ get_header();
     
     
     <!-- Callout -->
-    <div class="callout" id="casino">
+    <div class="callout" id="casino" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="0" data-stellar-vertical-offset="-100">
       
     </div>
     <!-- /Callout -->
@@ -92,7 +75,7 @@ get_header();
     <!-- /Intro -->  
   
     <!-- Callout -->
-    <div class="callout" id="cheers">
+    <div class="callout" id="cheers" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="0">
       
     </div>
     <!-- /Callout -->  
@@ -104,9 +87,19 @@ get_header();
           <div class="col-md-8 col-md-offset-2 text-center">
             <h3>Team</h3>
             <p class="lead">Silver Heritage has built its reputation as one of the region's most respected gaming groups, by careful management from a world-class Board of Directors and a highly experienced Asia based casino professionals. </p>
-            <p class="lead"><strong>Mike Bolsover</strong>
-<i>Chief Executive Officer</i>
-Mike was born in Hong Kong and educated in England and the United States before returning to Asia to live in 2001. He has more than 15 years experience in the Asian gaming industry, initially establishing new markets for online operator Victor Chandler in South Korea and Malaysia before co-founding Silver Heritage with Tim Shepherd in 2004. Mike directs the corporate strategy and operations of the business from Hong Kong and is a member of the Board of Directors. Mike has a BBA in Finance and Marketing from the Roberto C. Goizueta Business School, at Emory University in Atlanta GA, USA.</p>
+
+            <section class="team-slider">
+              <div class="slide">
+                <p class="lead"><strong>Mike Bolsover</strong>
+    <em>Chief Executive Officer</em>
+    Mike was born in Hong Kong and educated in England and the United States before returning to Asia to live in 2001. He has more than 15 years experience in the Asian gaming industry, initially establishing new markets for online operator Victor Chandler in South Korea and Malaysia before co-founding Silver Heritage with Tim Shepherd in 2004. Mike directs the corporate strategy and operations of the business from Hong Kong and is a member of the Board of Directors. Mike has a BBA in Finance and Marketing from the Roberto C. Goizueta Business School, at Emory University in Atlanta GA, USA.</p>
+              </div>
+              <div class="slide">
+                <p class="lead"><strong>Mike Bolsover</strong>
+    <em>Chief Executive Officer</em>
+    Mike was born in Hong Kong and educated in England and the United States before returning to Asia to live in 2001. He has more than 15 years experience in the Asian gaming industry, initially establishing new markets for online operator Victor Chandler in South Korea and Malaysia before co-founding Silver Heritage with Tim Shepherd in 2004. Mike directs the corporate strategy and operations of the business from Hong Kong and is a member of the Board of Directors. Mike has a BBA in Finance and Marketing from the Roberto C. Goizueta Business School, at Emory University in Atlanta GA, USA.</p>
+              </div>
+            </section>
           </div>
            
         </div>
@@ -118,15 +111,31 @@ Mike was born in Hong Kong and educated in England and the United States before 
     <div id="contact" class="intro">
       <div class="container">
         <div class="row">
-          <div class="col-md-8 col-md-offset-2 text-center">
+          <div class="col-md-8 col-md-offset-2">
             <h3>Contact</h3>
-            <p class="lead">Silver Heritage has built its reputation as one of the region's most respected gaming groups, by careful management from a world-class Board of Directors and a highly experienced Asia based casino professionals. </p>
-            <p class="lead"><strong>Mike Bolsover</strong>
-<i>Chief Executive Officer</i>
-Mike was born in Hong Kong and educated in England and the United States before returning to Asia to live in 2001. He has more than 15 years experience in the Asian gaming industry, initially establishing new markets for online operator Victor Chandler in South Korea and Malaysia before co-founding Silver Heritage with Tim Shepherd in 2004. Mike directs the corporate strategy and operations of the business from Hong Kong and is a member of the Board of Directors. Mike has a BBA in Finance and Marketing from the Roberto C. Goizueta Business School, at Emory University in Atlanta GA, USA.</p>
           </div>
-           
         </div>
+        <div class="row">
+          <div class="col-md-3 col-md-offset-2">
+            <p class="lead">
+              <strong>General Info:</strong>
+              <a href="mailto:info@silverheritagegroup.com">info@silverheritagegroup.com</a>
+              <em>Tel: <a class="tellink" href="tel:+85221101684">(852) 2110 1684</a></em>
+              <em>Fax: (852) 8169 2896</em>
+            </p>
+            <p class="lead">
+              <strong>Sales:</strong>
+              <a href="mailto:info@silverheritagegroup.com">sales@silverheritagegroup.com</a>
+              <em>Tel: <a class="tellink" href="tel:+85221101684">(852) 2110 1684</a></em>
+              <em>Fax: (852) 8169 2896</em>
+            </p>
+          </div>
+          <div class="col-md-5">
+          <?=do_shortcode('[contact-form-7 id="27" title="Contact form 1"]');?>
+          
+          </div>
+        </div>
+        
       </div>
     </div>
     <!-- /Intro -->   
