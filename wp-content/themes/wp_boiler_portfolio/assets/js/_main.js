@@ -12,13 +12,22 @@ var ExampleSite = {
 					$("#main-nav li:first-child").addClass("active");
 				}
       });
+      $("#lightbox .fa").click(function() {
+      
+        $("#lightbox").hide();
+      });
+      $(".project_link").click(function() {
+        
+        $("#lightbox").show();
+        console.log("here");
+      });
       $(".tooltips").tooltip();
       $('.team-slider').bxSlider({
 			
 				//controls: false,
 			//	pager: false,
 				mode: 'horizontal',
-				auto: true,
+				auto: false,
 				speed: 800,
 				pause: 6000,
 				preloadImages: 'all',

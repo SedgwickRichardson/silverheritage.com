@@ -14,24 +14,31 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
 define('DB_NAME', 'shl');
 
-/** MySQL database username */
-define('DB_USER', 'root');
-
-/** MySQL database password */
-define('DB_PASSWORD', 'root');
-
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+if ($_SERVER['SERVER_NAME'] == "local.silverheritage.com") {
+	define('WP_HOME', 'http://local.silverheritage.com');
+	define('WP_SITEURL', 'http://local.silverheritage.com/');
+	define('DB_USER', 'root');
+	define('DB_PASSWORD', 'root');
+	define('DB_HOST', 'localhost');
+	
+} else if ($_SERVER['SERVER_NAME'] == "staging.shlworld.com"){
+	
+	define('WP_HOME', 'http://staging.shlworld.com');
+	define('WP_SITEURL', 'http://staging.shlworld.com/');
+	define('DB_USER', 'web_user');
+	define('DB_PASSWORD', 'srstag3');
+	define('DB_HOST', 'localhost');
+}
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
+
 
 /**#@+
  * Authentication Unique Keys and Salts.

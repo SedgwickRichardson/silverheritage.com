@@ -10,7 +10,7 @@
 get_header();
 ?> 
     <!-- Callout -->
-    <div class="callout" id="roulette" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="0">
+    <div class="callout" id="roulette" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50">
       
     </div>
     <!-- /Callout -->
@@ -31,7 +31,7 @@ get_header();
     
     
     <!-- Callout -->
-    <div class="callout" id="casino" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="0" data-stellar-vertical-offset="-100">
+    <div class="callout" id="casino" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="-100">
       
     </div>
     <!-- /Callout -->
@@ -47,27 +47,39 @@ get_header();
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 col-md-offset-2">
+          <div class="col-md-4 col-md-offset-2 project_link">
             <h4>India</h4>
             <strong>Tiger Palace Resort & Casino</strong>
-            <img src="assets/img/silverheritage-india-tigerresort.jpg" alt="silverheritage-india-tigerresort" width="293" height="184" />
+            <div class="image-wrap">
+              <img src="assets/img/silverheritage-india-tigerresort.jpg" alt="silverheritage-india-tigerresort" width="293" height="184" />
+              <span class="more"><p>View more details<p></span>
+            </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 project_link">
             <h4>India</h4>
             <strong>Tiger Palace Resort & Casino</strong>
-            <img src="assets/img/silverheritage-india-tigerresort.jpg" alt="silverheritage-india-tigerresort" width="293" height="184" />
+            <div class="image-wrap">
+              <img src="assets/img/silverheritage-india-tigerresort.jpg" alt="silverheritage-india-tigerresort" width="293" height="184" />
+              <span class="more"><p>View more details<p></span>
+            </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 col-md-offset-2">
+          <div class="col-md-4 col-md-offset-2 project_link">
             <h4>India</h4>
             <strong>Tiger Palace Resort & Casino</strong>
-            <img src="assets/img/silverheritage-india-tigerresort.jpg" alt="silverheritage-india-tigerresort" width="293" height="184" />
+            <div class="image-wrap">
+              <img src="assets/img/silverheritage-india-tigerresort.jpg" alt="silverheritage-india-tigerresort" width="293" height="184" />
+              <span class="more"><p>View more details<p></span>
+            </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 project_link">
             <h4>India</h4>
             <strong>Tiger Palace Resort & Casino</strong>
-            <img src="assets/img/silverheritage-india-tigerresort.jpg" alt="silverheritage-india-tigerresort" width="293" height="184" />
+            <div class="image-wrap">
+              <img src="assets/img/silverheritage-india-tigerresort.jpg" alt="silverheritage-india-tigerresort" width="293" height="184" />
+              <span class="more"><p>View more details<p></span>
+            </div>
           </div>
         </div>
       </div>
@@ -75,7 +87,7 @@ get_header();
     <!-- /Intro -->  
   
     <!-- Callout -->
-    <div class="callout" id="cheers" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="0">
+    <div class="callout" id="cheers" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50">
       
     </div>
     <!-- /Callout -->  
@@ -140,8 +152,22 @@ get_header();
     </div>
     <!-- /Intro -->   
    
-   
-</div><!-- end .container -->
+<section id="lightbox">
+  <div class="lightbox-inner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 lightbox-content text-center">
+          <i class="fa fa-times-circle fa-2x"></i>
+          <h5>The Millionaires Club</h5>
+          <h6>Large Scale Retail Gaming Operationsin Philippines</h6>
+          <img src="/assets/img/lightbox-sample.jpg" alt="lightbox-sample" width="683" height="512" />
+          <p>SHL are currently acquiring a series of licensed gaming clubs across the Philippines and will improve the entire gaming experience from game type to physical premises, re-launching each one under the brand The Millionaire's Club. The Philippines is one of the best regulated gaming markets in Asia Pacific and home to hundreds of licensed poker, bingo, and e-gaming (PEGS) clubs, in addition to many off track betting outlets serving its 7000+ islands and 100 million citizens. The SHL proposition is simple: aggressively purchase under performing clubs in operation today and use it's world-class gaming knowledge and experience to renovate and re-launch to the existing customer better under one nationally recognized brand. By 2018 SHL expects to operate at least 30 Millionaire's Clubs with 2,000 gaming positions enjoyed by a player club featuring no fewer than 30,000 members. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  
+
     
      
 <?php get_footer(); ?>

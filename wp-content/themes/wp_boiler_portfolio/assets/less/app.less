@@ -13,7 +13,7 @@ body {
   font-family: @roboto_light;
   font-size: 16px;
   line-height: 24px;
-  background: @gray-lighter;
+  //background: @gray-lighter;
 }
 strong {
   font-family: @robotoslab_bold;
@@ -25,8 +25,81 @@ strong {
   padding-right: 0px;
   overflow: hidden;
 }
+img {
+  max-width: 100%;
+  height:auto;
+}
+
+#lightbox {
+  background: #f6fbfe;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: none;
+  .animated;
+  .fadeInDownBig;  
+  
+  .container {
+    background: #f6fbfe;  
+  }
+  .lightbox-inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .lightbox-content {
+    position: relative;
+    padding-top: 60px;
+    .fa {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      color: @gray-light;
+      cursor: pointer;
+      &:hover {
+        color: @gray;  
+      }
+    }
+    h5 {
+        font-family: @robotoslab_bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;        
+        color: black;
+        font-size: 16px;
+        border-bottom: 1px solid black;
+        padding-bottom: 20px;
+    }
+    h6 {
+        font-family: @robotoslab_bold;
+        color: black;
+        font-size: 27px;
+        margin: 35px 0px;
+    }
+    img {
+      width: 100%;
+    }
+    p {
+      text-align: left;
+      padding: 30px 0px;
+    }
+  }
+}
+
+
+
+
+
+
 footer .container {
-   background: @gray-lighter;
+   //background: @gray-lighter;
 }
 
 /* Full Page Image Header Area */
@@ -92,11 +165,13 @@ nav {
   position: relative;
   background: white;  
   nav {
+    width: 100%;
     //border-bottom: 1px solid @gray-light;
     box-shadow: 0px 0px 10px @gray;
     .toptoplink {
       display: block;
       float: left;
+      margin: 13px 0px 0px -15px;
       position: relative;
       z-index: 2000;
       .animated;
@@ -113,8 +188,9 @@ nav {
     .navbar-nav {
       display: block;
       padding: 0px;
-      margin: 0px;
+      margin: 0px -15px 0px 0px;
       border: none;
+      float: right;
       .animated;
       .fadeInRight;
 
@@ -129,22 +205,31 @@ nav {
 .callout {
 
   width: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   
   &#roulette {
-    height: 493px;
-
+    height: 600px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     background: url(../img/sample-image1-big.jpg) no-repeat center center; 
   }
   &#casino {
-    height: 493px;
+    height: 550px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
     background: url(../img/sample-image2-big.jpg) no-repeat center center; 
   }
   &#cheers {
     height: 750px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
     background: url(../img/sample-image3-big.jpg) no-repeat center center; 
   }
 }
@@ -194,6 +279,39 @@ p.lead {
     color: @gray;
     margin-bottom: 10px;
     display: block;
+  }
+  .project_link {
+    cursor: pointer;
+    
+    &:hover {
+      .image-wrap .more {
+        display: block;
+      }
+    }
+    
+    .image-wrap {
+      position: relative;
+      overflow: hidden;
+    
+      img {
+        width: 100%;
+      }
+      .more {
+        position: absolute;
+        bottom: 20px;
+        left: 0px;
+        height: 35px;
+        background: rgba(0,0,0,0.8);
+        display: block;
+        width: 100%;
+        text-align: center;
+        display:none;
+        p {
+          color: white;
+          padding: 5px;
+        }
+      }
+    }
   }
 }
 
