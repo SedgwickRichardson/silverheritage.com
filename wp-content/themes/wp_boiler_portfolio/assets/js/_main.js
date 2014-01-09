@@ -5,6 +5,8 @@ var ExampleSite = {
   // All pages
   common: {
     init: function() {
+      
+      
       $(window).scroll(function() {
         if($(this).scrollTop() < 500) {
   				$("#main-nav .active").removeClass("active");
@@ -18,8 +20,22 @@ var ExampleSite = {
       });
       $(".project_link").click(function() {
         
-        $("#lightbox").show();
-        console.log("here");
+      
+        $.post(MyAjax.ajaxurl,
+								
+					{
+						action:'get_lightbox', 
+						id: $(this).attr("id")
+					
+					},
+				
+					function( response ) {
+						$("#lightbox #ajax").html(response);
+						console.log(response);
+						$("#lightbox").show();
+					}
+				);
+
       });
       $(".tooltips").tooltip();
       $('.team-slider').bxSlider({
@@ -32,47 +48,50 @@ var ExampleSite = {
 				pause: 6000,
 				preloadImages: 'all',
 				nextText: '<i class="fa fa-chevron-right"></i>',
-				prevText: ''
+				prevText: '<i class="fa fa-chevron-left"></i>'
 			});
-				
-      $.stellar({
-        
-        horizontalScrolling: true,
-        verticalScrolling: true,
-        
-        // Set the global alignment offsets
-        horizontalOffset: 0,
-        verticalOffset: 0,
-        
-        // Refreshes parallax content on window load and resize
-        responsive: false,
-        
-        // Select which property is used to calculate scroll.
-        // Choose 'scroll', 'position', 'margin' or 'transform',
-        // or write your own 'scrollProperty' plugin.
-        scrollProperty: 'scroll',
-        
-        // Select which property is used to position elements.
-        // Choose between 'position' or 'transform',
-        // or write your own 'positionProperty' plugin.
-        positionProperty: 'position',
-        
-        // Enable or disable the two types of parallax
-        parallaxBackgrounds: true,
-        parallaxElements: true,
-        
-        // Hide parallax elements that move outside the viewport
-        hideDistantElements: true
-        
-      });
+		
+      if (!$("html").hasClass("lt-ie10") && !mobile) {
+        $.stellar({
+          
+          horizontalScrolling: true,
+          verticalScrolling: true,
+          
+          // Set the global alignment offsets
+          horizontalOffset: 0,
+          verticalOffset: 0,
+          
+          // Refreshes parallax content on window load and resize
+          responsive: false,
+          
+          // Select which property is used to calculate scroll.
+          // Choose 'scroll', 'position', 'margin' or 'transform',
+          // or write your own 'scrollProperty' plugin.
+          scrollProperty: 'scroll',
+          
+          // Select which property is used to position elements.
+          // Choose between 'position' or 'transform',
+          // or write your own 'positionProperty' plugin.
+          positionProperty: 'position',
+          
+          // Enable or disable the two types of parallax
+          parallaxBackgrounds: true,
+          parallaxElements: true,
+          
+          // Hide parallax elements that move outside the viewport
+          hideDistantElements: true
+          
+        });
+      }
+      if (!mobile) {
+        $("#main-nav").sticky({topSpacing:0});
       
-      $("#main-nav").sticky({topSpacing:0});
-      
-      $('#main-nav a').smoothScroll({
-			
-				offset: 0
+        $('#main-nav a').smoothScroll({
+          
+				  offset: 0
 				
-			}); 
+        }); 
+      }
 
 /*
       $(window).scroll(function(){
@@ -101,6 +120,7 @@ var ExampleSite = {
 */
       
       
+/*
       $('a[href*=#]:not([href=#])').click(function() {
         console.log('here');
         if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') || location.hostname === this.hostname) {
@@ -115,6 +135,7 @@ var ExampleSite = {
           }
         }
       });
+*/
    },
     finalize: function() { }
   },

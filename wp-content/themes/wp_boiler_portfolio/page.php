@@ -21,8 +21,12 @@ get_header();
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2 text-center">
-            <h3>About</h3>
-            <p class="lead">SHL is fast becoming a major regional gaming operations business in Asia-Pacific, with equity ownership in casino licenses and licensed operations, and significant scale projects in Nepal (Indian gaming market), Vietnam (International gaming market) and The Philippines (Domestic gaming market). The Company also operates more than 1,000 electronic table gaming and slot machines across the region, on long-term revenue share contracts with licensed casinos. </p>
+            <?
+            $id = get_ID_by_slug("about");
+            $post = get_post($id);
+            ?>
+            <h3><?=$post->post_title?></h3>
+            <p class="lead"><?=$post->post_content?></p>
           </div>
         </div>
       </div>
@@ -42,52 +46,53 @@ get_header();
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2 text-center">
-            <h3>Operations & Projects</h3>
-            <p class="lead">Silver Heritage are developing some of the most exciting gaming projects globally today. Developed with first mover advantage and sustainable competitive market advantages the company is perfectly poised for rapid expansion in the world's largest gaming market: Asia Pacific. </p>
+            <?
+            $id = get_ID_by_slug("operations-projects");
+            $post = get_post($id);
+            ?>
+            <h3><?=$post->post_title?></h3>
+            <p class="lead"><?=$post->post_content?></p>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-4 col-md-offset-2 project_link">
-            <h4>India</h4>
-            <strong>Tiger Palace Resort & Casino</strong>
-            <div class="image-wrap">
-              <img src="assets/img/silverheritage-india-tigerresort.jpg" alt="silverheritage-india-tigerresort" width="293" height="184" />
-              <span class="more"><p>View more details<p></span>
-            </div>
-          </div>
-          <div class="col-md-4 project_link">
-            <h4>India</h4>
-            <strong>Tiger Palace Resort & Casino</strong>
-            <div class="image-wrap">
-              <img src="assets/img/silverheritage-india-tigerresort.jpg" alt="silverheritage-india-tigerresort" width="293" height="184" />
-              <span class="more"><p>View more details<p></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 col-md-offset-2 project_link">
-            <h4>India</h4>
-            <strong>Tiger Palace Resort & Casino</strong>
-            <div class="image-wrap">
-              <img src="assets/img/silverheritage-india-tigerresort.jpg" alt="silverheritage-india-tigerresort" width="293" height="184" />
-              <span class="more"><p>View more details<p></span>
-            </div>
-          </div>
-          <div class="col-md-4 project_link">
-            <h4>India</h4>
-            <strong>Tiger Palace Resort & Casino</strong>
-            <div class="image-wrap">
-              <img src="assets/img/silverheritage-india-tigerresort.jpg" alt="silverheritage-india-tigerresort" width="293" height="184" />
-              <span class="more"><p>View more details<p></span>
-            </div>
-          </div>
-        </div>
+       
+        <?
+					$args = array( 'numberposts' => -1, 'post_type' => 'project', 'post_status' => 'publish', 'order' => 'ASC', 'orderby' => 'menu_order');
+					$results = get_posts( $args );
+					$i = 0;
+					foreach( $results as $result ) {
+						$thumb = wp_get_attachment_image_src ( get_post_meta($result->ID, 'thumbnail_image', true), "full");
+						if ($i == 0 || $i == 2) :
+						  print '<div class="row">';
+						endif;
+					?>
+              <div class="col-md-4 project_link <? if ($i == 0 || $i == 2) : ?>col-md-offset-2<? endif; ?>" id="<?=$result->ID?>">
+                <h4><?=get_post_meta($result->ID, 'country', true)?></h4>
+                <strong><?=$result->post_title?></strong>
+                <div class="image-wrap">
+                  <? if ($thumb[0]) : ?>
+                    <img src="<?=$thumb[0]?>" width="<?=$thumb[1]?>" height="<?=$thumb[2]?>" />
+                  <? else : ?>
+                    <img src="http://placehold.it/500x313">
+                  <? endif; ?>
+                  <span class="more"><p>View more details<p></span>
+                </div>
+              </div>
+          <?
+  					if ($i == 1 || $i == 3) :
+  					  print '</div>';
+  					endif;
+
+            $i++;
+          }
+          ?>
+        
+     
       </div>
     </div>
     <!-- /Intro -->  
   
     <!-- Callout -->
-    <div class="callout" id="cheers" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50">
+    <div class="callout" id="cheers" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="-300">
       
     </div>
     <!-- /Callout -->  
@@ -97,21 +102,69 @@ get_header();
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2 text-center">
-            <h3>Team</h3>
-            <p class="lead">Silver Heritage has built its reputation as one of the region's most respected gaming groups, by careful management from a world-class Board of Directors and a highly experienced Asia based casino professionals. </p>
+            <?
+            $id = get_ID_by_slug("team");
+            $post = get_post($id);
+            ?>
+            <h3><?=$post->post_title?></h3>
+            <p class="lead"><?=$post->post_content?></p>
 
-            <section class="team-slider">
-              <div class="slide">
-                <p class="lead"><strong>Mike Bolsover</strong>
-    <em>Chief Executive Officer</em>
-    Mike was born in Hong Kong and educated in England and the United States before returning to Asia to live in 2001. He has more than 15 years experience in the Asian gaming industry, initially establishing new markets for online operator Victor Chandler in South Korea and Malaysia before co-founding Silver Heritage with Tim Shepherd in 2004. Mike directs the corporate strategy and operations of the business from Hong Kong and is a member of the Board of Directors. Mike has a BBA in Finance and Marketing from the Roberto C. Goizueta Business School, at Emory University in Atlanta GA, USA.</p>
+            <? if (!is_mobile()) : ?>
+              <section class="team-slider">
+                <?
+  								$args = array( 'numberposts' => -1, 'post_type' => 'team', 'post_status' => 'publish', 'order' => 'ASC', 'orderby' => 'menu_order');
+  								$results = get_posts( $args );
+  								foreach( $results as $result ) {
+  								?>
+    								<div class="slide">
+                      <p class="lead">
+                        <strong><?=$result->post_title?></strong>
+                        <em><?=get_post_meta($result->ID, 'title', true)?></em>
+                        <?=$result->post_content?>
+                      </p>
+                    </div>
+  								<?
+  								}
+  								?>
+              </section>
+            <? else : ?>
+              <div class="panel-group" id="accordion">
+                <?
+								$args = array( 'numberposts' => -1, 'post_type' => 'team', 'post_status' => 'publish', 'order' => 'ASC', 'orderby' => 'menu_order');
+								$results = get_posts( $args );
+								$i = 0;
+								foreach( $results as $result ) {
+								?>
+              
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?=$i?>">
+                          <span class="info">
+                            <strong><?=$result->post_title?></strong>
+                            <em><?=get_post_meta($result->ID, 'title', true)?></em>
+                          </span>
+                          <i class="fa fa-caret-down fa-2x"></i>
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse<?=$i?>" class="panel-collapse collapse">
+                      <div class="panel-body">
+                       <p><?=$result->post_content?></p>
+                      </div>
+                    </div>
+                  </div>
+                
+                <? 
+                $i++;
+                } 
+                ?>
+                
+            <? endif; ?>
               </div>
-              <div class="slide">
-                <p class="lead"><strong>Mike Bolsover</strong>
-    <em>Chief Executive Officer</em>
-    Mike was born in Hong Kong and educated in England and the United States before returning to Asia to live in 2001. He has more than 15 years experience in the Asian gaming industry, initially establishing new markets for online operator Victor Chandler in South Korea and Malaysia before co-founding Silver Heritage with Tim Shepherd in 2004. Mike directs the corporate strategy and operations of the business from Hong Kong and is a member of the Board of Directors. Mike has a BBA in Finance and Marketing from the Roberto C. Goizueta Business School, at Emory University in Atlanta GA, USA.</p>
-              </div>
-            </section>
+            
+            
+            
           </div>
            
         </div>
@@ -123,7 +176,7 @@ get_header();
     <div id="contact" class="intro">
       <div class="container">
         <div class="row">
-          <div class="col-md-8 col-md-offset-2">
+          <div class="col-md-8 col-md-offset-2 text-center">
             <h3>Contact</h3>
           </div>
         </div>
@@ -158,10 +211,8 @@ get_header();
       <div class="row">
         <div class="col-md-8 col-md-offset-2 lightbox-content text-center">
           <i class="fa fa-times-circle fa-2x"></i>
-          <h5>The Millionaires Club</h5>
-          <h6>Large Scale Retail Gaming Operationsin Philippines</h6>
-          <img src="/assets/img/lightbox-sample.jpg" alt="lightbox-sample" width="683" height="512" />
-          <p>SHL are currently acquiring a series of licensed gaming clubs across the Philippines and will improve the entire gaming experience from game type to physical premises, re-launching each one under the brand The Millionaire's Club. The Philippines is one of the best regulated gaming markets in Asia Pacific and home to hundreds of licensed poker, bingo, and e-gaming (PEGS) clubs, in addition to many off track betting outlets serving its 7000+ islands and 100 million citizens. The SHL proposition is simple: aggressively purchase under performing clubs in operation today and use it's world-class gaming knowledge and experience to renovate and re-launch to the existing customer better under one nationally recognized brand. By 2018 SHL expects to operate at least 30 Millionaire's Clubs with 2,000 gaming positions enjoyed by a player club featuring no fewer than 30,000 members. </p>
+          <div id="ajax">
+          </div>
         </div>
       </div>
     </div>

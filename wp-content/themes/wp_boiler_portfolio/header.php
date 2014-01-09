@@ -7,10 +7,11 @@
   <!-- Full Page Image Header Area -->
     <div id="top" class="header">
       <div class="vert-text">
-        <h1>Silver Heritage</h1>
-        <h2>Asia's Regional Gaming Operator</h2>
+        <h1 class="hidden-xs">Silver Heritage</h1>
+        <img class="visible-xs" src="assets/img/silverheritage-logo.png" alt="silverheritage-logo" width="631" height="74" />
+        <h2>Asia&rsquo;s Regional Gaming Operator</h2>
       </div>
-      <nav class="collapse navbar-collapse" role="navigation" id="main-nav">
+      <nav class="collapse navbar-collapse hidden-xs" role="navigation" id="main-nav">
         <div class="container">
         <div class="col-md-8 col-md-offset-2 text-center">
         <a class="toptoplink" href="#toptop"><img src="/assets/img/silverheritage-logo.png" alt="silverheritage-logo" width="631" height="74" /></a>

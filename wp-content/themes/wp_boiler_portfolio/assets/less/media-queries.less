@@ -8,7 +8,7 @@
 
 @media (min-width: @screen-sm) {
 	
-  #contact .lead tellink {
+  #contact .lead .tellink {
     color: #333;
     cursor: default;
   }
@@ -23,6 +23,65 @@
     } 
 
   }
+  #lightbox .lightbox-content #ajax {
+    padding: 0px;
+  }
+  .header {
+    position: relative;
+    text-align: center;
+    
+    .vert-text {
+      margin: 200px 0px 130px 0px;
+      padding: 0px;
+      text-align: center;
+      h1 {
+        padding: 0;
+        margin: 0px auto;
+        text-indent: -9999px;
+        background: url(../img/silverheritage-logo.png) no-repeat;
+        width: 631px;
+        height: 74px;
+      }
+      h2 {
+        font-size: 18px;
+        letter-spacing: 5px;
+      }
+    }
+    
+  }
+  .callout {
+  
+    width: 100%;
+    
+    &#roulette {
+      height: 600px;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background: url(../img/sample-image1-big.jpg) no-repeat center center; 
+    }
+    &#casino {
+      height: 550px;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+  
+      background: url(../img/sample-image2-big.jpg) no-repeat center center; 
+    }
+    &#cheers {
+      height: 700px;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+  
+      background: url(../img/sample-image3-big.jpg) no-repeat center center; 
+    }
+  }
+    
+    
 
 }
 
@@ -34,6 +93,20 @@
       font-size: 13px;
     } 
 
+  }
+  #operations-projects {
+    .project_link {
+      
+      &:hover {
+        .image-wrap .more {
+          display: block;
+        }
+      }
+    }
+  }
+  #contact form input[type=submit] {
+    width: auto;
+    padding: 10px;
   }
 
 }
