@@ -10,6 +10,49 @@ strong {
   font-family: @robotoslab_bold;
   font-weight: normal;
 }
+#main-mobile-nav {
+  height: auto !important;
+
+  #menu-primary-navigation {
+    display: block;
+    border-bottom: none;
+
+    li {
+      text-align: left;
+      a {
+        font-size: 14px;
+      }
+      a:hover {
+        background: none;
+      }
+    }
+  }
+}
+.navbar-toggle {
+  background-color: #3774b9 !important;
+  text-align: center;
+  float: none !important;
+  display: block;
+  width: 80%;
+  margin: 20px auto !important;
+  border-radius: 4px !important;
+  &.collapsed {
+      background-color: #3774b9 !important;
+  text-align: center;
+  float: none !important;
+  display: block;
+  width: 80%;
+  margin: 20px auto !important;
+  border-radius: 4px !important;
+  }
+  p {
+    color: white;
+    margin: 0px;
+  }
+}
+.header {
+  min-height: 200px;
+}
 .container {
   background: white;
   padding-left: 0px;
@@ -71,7 +114,7 @@ img {
   .lightbox-content {
     position: relative;
     padding-top: 60px;
-    .fa {
+    .close-top {
       position: absolute;
       right: 20px;
       top: 20px;
@@ -80,6 +123,16 @@ img {
       &:hover {
         color: @gray;  
       }
+    }
+    .close-bottom {
+      color: @gray-light;
+      cursor: pointer;
+      float: right;
+      margin: 0px 30px 30px 30px;
+      &:hover {
+        color: @gray;  
+      }
+
     }
     #ajax {
       padding: 0px 20px 0px 20px;
@@ -309,11 +362,11 @@ p.lead {
         bottom: 20px;
         left: 0px;
         height: 35px;
-        background: rgba(0,0,0,0.8);
+        background: rgba(0,0,0,0.7);
         display: block;
         width: 100%;
         text-align: center;
-        display:none;
+        //display:none;
         p {
           color: white;
           padding: 5px;
@@ -331,6 +384,9 @@ p.lead {
     font-style: normal;
     font-family: @robotoslab_regular;
     margin-bottom: 5px;
+  }
+  .expand-link {
+    text-decoration: none !important;
   }
   .bx-controls .bx-pager-item {
     display: inline-block;

@@ -30,6 +30,14 @@ if ($_SERVER['SERVER_NAME'] == "local.silverheritage.com") {
 	define('DB_USER', 'web_user');
 	define('DB_PASSWORD', 'srstag3');
 	define('DB_HOST', 'localhost');
+
+} else if ($_SERVER['SERVER_NAME'] == "www.silverheritagegroup.com"){
+	
+	define('WP_HOME', 'http://www.silverheritagegroup.com');
+	define('WP_SITEURL', 'http://www.silverheritagegroup.com');
+	define('DB_USER', 'usr');
+	define('DB_PASSWORD', 'U5r12345.99');
+	define('DB_HOST', 'shlgroup.ipowermysql.com');
 }
 
 /** Database Charset to use in creating database tables. */
@@ -38,7 +46,7 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
-
+define('DISALLOW_FILE_EDIT', true );
 
 /**#@+
  * Authentication Unique Keys and Salts.

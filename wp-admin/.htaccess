@@ -1,0 +1,13 @@
+AuthUserFile /Users/user/Sites/silverheritage.com/.htpasswd
+AuthType Basic
+AuthName "restricted"
+Order Deny,Allow
+Deny from all
+Require valid-user
+Satisfy any
+
+<Files admin-ajax.php>
+    Order allow,deny
+    Allow from all
+    Satisfy any 
+</Files>

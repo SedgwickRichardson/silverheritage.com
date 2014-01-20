@@ -37,7 +37,7 @@ var ExampleSite = {
 				);
 
       });
-      $(".tooltips").tooltip();
+      
       $('.team-slider').bxSlider({
 			
 				//controls: false,
@@ -51,7 +51,8 @@ var ExampleSite = {
 				prevText: '<i class="fa fa-chevron-left"></i>'
 			});
 		
-      if (!$("html").hasClass("lt-ie10") && !mobile) {
+      if (!$("html").hasClass("lt-ie10") && !mobile && !tablet) {
+        $(".tooltips").tooltip();
         $.stellar({
           
           horizontalScrolling: true,
@@ -83,15 +84,35 @@ var ExampleSite = {
           
         });
       }
-      if (!mobile) {
-        $("#main-nav").sticky({topSpacing:0});
-      
-        $('#main-nav a').smoothScroll({
-          
-				  offset: 0
-				
-        }); 
+      if (mobile) {
+        
+        $(".expand-link").click(function() {
+          if ($(".fa",this).hasClass("fa-caret-down")) {
+            $(".fa", this).removeClass("fa-caret-down").addClass("fa-caret-up");
+          } else {
+            $(".fa", this).removeClass("fa-caret-up").addClass("fa-caret-down");
+          }
+        });
+
       }
+      if (!mobile && !tablet) {
+        $("#main-nav").sticky({topSpacing:0});
+      }
+      if (!mobile) {
+        $('#main-nav a').smoothScroll({
+				  offset: 0
+        }); 
+      } else {
+        $('#main-mobile-nav a').smoothScroll({
+          offset: 40
+        }); 
+
+      }
+      $('footer a').smoothScroll({
+          
+          offset: -20
+        
+        }); 
 
 /*
       $(window).scroll(function(){

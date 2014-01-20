@@ -25,9 +25,14 @@
 	<!-- /Footer -->
   <script type=text/javascript>
   var mobile = false;
+  var tablet = false;
   <? if (is_mobile()) { ?>
     mobile = true;    
   <? } ?>
+  <? if (is_tablet()) { ?>
+    tablet = true;    
+  <? } ?>
+  
   </script>
   <?php wp_footer(); ?>
      

@@ -65,7 +65,7 @@ get_header();
 						  print '<div class="row">';
 						endif;
 					?>
-              <div class="col-md-4 project_link <? if ($i == 0 || $i == 2) : ?>col-md-offset-2<? endif; ?>" id="<?=$result->ID?>">
+              <div class="col-md-4 col-sm-6 project_link <? if ($i == 0 || $i == 2) : ?>col-md-offset-2<? endif; ?>" id="<?=$result->ID?>">
                 <h4><?=get_post_meta($result->ID, 'country', true)?></h4>
                 <strong><?=$result->post_title?></strong>
                 <div class="image-wrap">
@@ -139,7 +139,7 @@ get_header();
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?=$i?>">
+                        <a class="expand-link" data-toggle="collapse" data-parent="#accordion" href="#collapse<?=$i?>">
                           <span class="info">
                             <strong><?=$result->post_title?></strong>
                             <em><?=get_post_meta($result->ID, 'title', true)?></em>
@@ -210,9 +210,10 @@ get_header();
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2 lightbox-content text-center">
-          <i class="fa fa-times-circle fa-2x"></i>
+          <i class="fa fa-times-circle fa-2x close-top"></i>
           <div id="ajax">
           </div>
+           <i class="fa fa-times-circle fa-2x close-bottom visible-xs"></i>
         </div>
       </div>
     </div>
