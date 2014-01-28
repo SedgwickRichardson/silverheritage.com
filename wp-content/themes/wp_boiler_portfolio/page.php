@@ -10,7 +10,7 @@
 get_header();
 ?> 
     <!-- Callout -->
-    <div class="callout" id="roulette" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50">
+    <div class="callout" id="roulette" data-stellar-background-ratio="0.6" data-stellar-horizontal-offset="50">
       
     </div>
     <!-- /Callout -->
@@ -35,7 +35,7 @@ get_header();
     
     
     <!-- Callout -->
-    <div class="callout" id="casino" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="-100">
+    <div class="callout" id="casino" data-stellar-background-ratio="0.6" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="-100">
       
     </div>
     <!-- /Callout -->
@@ -92,7 +92,7 @@ get_header();
     <!-- /Intro -->  
   
     <!-- Callout -->
-    <div class="callout" id="cheers" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="-300">
+    <div class="callout" id="cheers" data-stellar-background-ratio="0.6" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="-300">
       
     </div>
     <!-- /Callout -->  
