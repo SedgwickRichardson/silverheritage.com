@@ -1,10 +1,5 @@
-# RewriteCond %{HTTP_HOST} ^silverheritagegroup.com$ [NC]
-# RewriteRule ^(.*)$ http://www.silverheritagegroup.com/$1 [R=301,L]
-
-<files wp-config.php>
-order allow,deny
-deny from all
-</files>
+RewriteCond %{HTTP_HOST} ^silverheritagegroup.com$ [NC]
+RewriteRule ^(.*)$ http://www.silverheritagegroup.com/$1 [R=301,L]
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
@@ -17,8 +12,13 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
-
 # END WordPress
+
+<files wp-config.php>
+order allow,deny
+deny from all
+</files>
+
 
 
 <IfModule mod_mime.c>

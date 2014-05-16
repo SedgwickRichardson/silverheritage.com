@@ -12,7 +12,7 @@
         <h2>Asia&rsquo;s Regional Gaming Operator</h2>
       </div>
       
-      <? if (!is_mobile()) : ?>
+
         <nav class="collapse navbar-collapse hidden-xs" role="navigation" id="main-nav">
           <div class="container">
           <div class="col-md-8 col-md-offset-2 text-center">
@@ -25,9 +25,9 @@
           </div>
           </div>
         </nav>
-      <? else : ?>
 
-        <nav class="collapse navbar-collapse visible-xs" role="navigation" id="main-mobile-nav">
+
+<!--         <nav class="collapse navbar-collapse visible-xs" role="navigation" id="main-mobile-nav">
           <div class="container">
             <div class="navbar-header">
               <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -43,7 +43,7 @@
             </nav>
           </div>
 
-        </nav>
-      <? endif; ?>
+        </nav> -->
+
 
     </div>

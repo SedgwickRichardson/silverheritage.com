@@ -63,7 +63,7 @@ var ExampleSite = {
           verticalOffset: 0,
           
           // Refreshes parallax content on window load and resize
-          responsive: false,
+          responsive: true,
           
           // Select which property is used to calculate scroll.
           // Choose 'scroll', 'position', 'margin' or 'transform',
@@ -84,7 +84,7 @@ var ExampleSite = {
           
         });
       }
-      if (mobile) {
+      if (mobile || tablet) {
         
         $(".expand-link").click(function() {
           if ($(".fa",this).hasClass("fa-caret-down")) {

@@ -10,9 +10,8 @@
 get_header();
 ?> 
     <!-- Callout -->
-    <div class="callout" id="roulette" data-stellar-background-ratio="0.6" data-stellar-horizontal-offset="50">
-      
-    </div>
+    <div class="callout hidden-xs" id="roulette" data-stellar-background-ratio="0.6" data-stellar-horizontal-offset="50"></div>
+    <img src="/assets/img/sample-image1-big_mobile.jpg" class="visible-xs" height="363" width="500" />
     <!-- /Callout -->
 
   
@@ -35,9 +34,8 @@ get_header();
     
     
     <!-- Callout -->
-    <div class="callout" id="casino" data-stellar-background-ratio="0.6" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="-100">
-      
-    </div>
+    <div class="callout hidden-xs" id="casino" data-stellar-background-ratio="0.6" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="-100"></div>
+    <img src="/assets/img/sample-image2-big_mobile.jpg" class="visible-xs" height="350" width="500" />
     <!-- /Callout -->
         
   
@@ -58,14 +56,16 @@ get_header();
         <?
 					$args = array( 'numberposts' => -1, 'post_type' => 'project', 'post_status' => 'publish', 'order' => 'ASC', 'orderby' => 'menu_order');
 					$results = get_posts( $args );
+          print count($results);
+          //echo $wp_query->found_posts;
 					$i = 0;
 					foreach( $results as $result ) {
 						$thumb = wp_get_attachment_image_src ( get_post_meta($result->ID, 'thumbnail_image', true), "full");
-						if ($i == 0 || $i == 2) :
+						if ($i == 0 || $i == 2 || $i == 4 || $i ==6) :
 						  print '<div class="row">';
 						endif;
 					?>
-              <div class="col-md-4 col-sm-6 project_link <? if ($i == 0 || $i == 2) : ?>col-md-offset-2<? endif; ?>" id="<?=$result->ID?>">
+              <div class="col-md-4 col-sm-6 project_link <? if ($i == 0 || $i == 2 || $i == 4) : ?>col-md-offset-2<? endif; ?>" id="<?=$result->ID?>">
                 <h4><?=get_post_meta($result->ID, 'country', true)?></h4>
                 <strong><?=$result->post_title?></strong>
                 <div class="image-wrap">
@@ -78,7 +78,7 @@ get_header();
                 </div>
               </div>
           <?
-  					if ($i == 1 || $i == 3) :
+  					if ($i == 1 || $i == 3 || $i == 5 || $i == 7 || $i == (count($results)-1)) :
   					  print '</div>';
   					endif;
 
@@ -92,9 +92,8 @@ get_header();
     <!-- /Intro -->  
   
     <!-- Callout -->
-    <div class="callout" id="cheers" data-stellar-background-ratio="0.6" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="-300">
-      
-    </div>
+    <div class="callout hidden-xs" id="cheers" data-stellar-background-ratio="0.6" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="-300"></div>
+    <img src="/assets/img/sample-image3-big_mobile.jpg" class="visible-xs" height="399" width="500" />
     <!-- /Callout -->  
   
    <!-- Intro -->
@@ -109,8 +108,8 @@ get_header();
             <h3><?=$post->post_title?></h3>
             <p class="lead"><?=$post->post_content?></p>
 
-            <? if (!is_mobile()) : ?>
-              <section class="team-slider">
+            
+              <section class="team-slider hidden-xs hidden-sm">
                 <?
   								$args = array( 'numberposts' => -1, 'post_type' => 'team', 'post_status' => 'publish', 'order' => 'ASC', 'orderby' => 'menu_order');
   								$results = get_posts( $args );
@@ -127,8 +126,8 @@ get_header();
   								}
   								?>
               </section>
-            <? else : ?>
-              <div class="panel-group" id="accordion">
+           
+              <div class="panel-group visible-xs visible-sm" id="accordion">
                 <?
 								$args = array( 'numberposts' => -1, 'post_type' => 'team', 'post_status' => 'publish', 'order' => 'ASC', 'orderby' => 'menu_order');
 								$results = get_posts( $args );
@@ -160,7 +159,7 @@ get_header();
                 } 
                 ?>
                 
-            <? endif; ?>
+            
               </div>
             
             
